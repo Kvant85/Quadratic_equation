@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <iostream>
 
 struct quadratic_equation
 {
@@ -26,7 +27,7 @@ quadratic_equation solve_equation(double _a, double _b, double _c)
 	}
 
 	//Дискриминант b^2 - 4*a*c:
-	float disc = _b * _b - 4 * _a * _c;
+	long double disc = _b * _b - 4 * _a * _c;
 
 	//Нет вещественных результатов - дискриминант меньше нуля
 	if (disc < 0) res.haveRealResult = false;
@@ -48,4 +49,5 @@ int main()
 
 	if (equation.haveRealResult) printf("Results: %g; %g", equation.firstResult, equation.secondResult);
 	else printf("No roots");
+	std::cout << std::endl;
 }
